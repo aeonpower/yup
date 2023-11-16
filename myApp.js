@@ -1,11 +1,10 @@
-helmet.hidePoweredBy(X-Powered-By)
-
 const express = require('express');
 const helmet = require('helmet');
 const app = express();
 
 const PORT = process.env.PORT || 3000;
 
+app.use(helmet()); // Use helmet middleware
 app.use(express.static('public'));
 app.disable('strict-transport-security');
 const api = require('./server.js');
